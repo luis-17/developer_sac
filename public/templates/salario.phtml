@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+    <?php foreach ($empleados as $row): ?>
+        <employee>
+            <id><?php echo $row['id']; ?></id>
+            <name><?php echo $row['name']; ?></name>
+            <email><?php echo $row['email']; ?></email>
+            <phone><?php echo $row['phone']; ?></phone>
+            <address><?php echo $row['address']; ?></address>
+            <position><?php echo $row['position']; ?></position>
+            <salary><?php echo $row['salary']; ?></salary>
+            <skills>
+                <?php foreach ($row['skills'] as $rowDet): ?>
+                    <skill><?php echo $rowDet['skill']; ?></skill>
+                <?php endforeach; ?>
+            </skills>
+        </employee>
+    <?php endforeach; ?>
+</employees>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> SISTEMA </title>
+</head>
+<body style="text-align: center;">
+    </html>
+    <h1> Empleados </h1>
+    <form action="empleados/busqueda" method="post"> 
+        <?php if( @$search === FALSE ){ ?>
+        <input type="text" name="mail" placeholder="Búsqueda por E-mail"> 
+        <button type="submit"> BUSCAR </button>
+        <?php } ?>
+        <?php if( @$search === TRUE ){ ?>
+        <a href="<?php echo $router->pathFor('empleados'); ?>" > VOLVER </a>
+        <?php } ?>
+    </form>
+    <table style="margin:auto;">
+        <tr style="text-transform:uppercase;">
+            <th>Nombre</th>
+            <th>E-mail</th>
+            <th>Posición</th>
+            <th>Salario</th>
+            <th>Acción</th>
+        </tr>
+    <?php foreach ($empleados as $row): ?>
+        <tr>
+            <td><?php echo $row['id']; ?></td>
+            <td><?php echo $row['email'] ?></td>
+            <td><?php echo $row['position'] ?> </td>
+            <td><?php echo $row['salary'] ?> </td>
+            <td>
+                <a href="<?php echo $router->pathFor('empleado-detail', ['id' => $row['id'] ]); ?>">Ver Detalle</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </table>
+</body>

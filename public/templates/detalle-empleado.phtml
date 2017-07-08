@@ -1,0 +1,27 @@
+    <div class="clearfix">
+        <a href="<?php echo $router->pathFor('empleados'); ?>" class="btn btn-primary">Volver</a>
+    </div>
+    <br><br>
+    <div class="">
+        <strong>NAME:</strong> <?php echo $fEmpleado['name']; ?>
+    </div>
+    <div class="">
+        <strong>EMAIL:</strong> <?php echo $fEmpleado['email']; ?>
+    </div>
+    <div class="">
+        <strong>PHONE:</strong> <?php echo $fEmpleado['phone']; ?>
+    </div>
+    <div class="">
+        <strong>ADDRESS:</strong> <?php echo $fEmpleado['address']; ?>
+    </div>
+    <div class="">
+        <strong>SALARY:</strong> <?php echo $fEmpleado['salary']; ?>
+    </div>
+    <div class="">
+        <strong>skills :</strong> <br>
+        <ul>
+            <?php foreach ($fEmpleado['skills'] as $row): ?>
+                <li><?php echo $row['skill']; ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
